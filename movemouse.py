@@ -1,7 +1,10 @@
+# Every 5 minutes, watch your mouse shift to the upper lefthand corner of your screen.
 import pyautogui
 import time
 import sys
 from datetime import datetime
+
+# By default FAILSAFE is True
 pyautogui.FAILSAFE = False
 numMin = None
 if ((len(sys.argv)<2) or sys.argv[1].isalpha() or int(sys.argv[1])<1):
@@ -13,6 +16,7 @@ while(True):
     while(x<numMin):
         time.sleep(60)
         x+=1
+    # Move mouse    
     for i in range(0,200):
         pyautogui.moveTo(0,i*4)
     pyautogui.moveTo(1,1)
